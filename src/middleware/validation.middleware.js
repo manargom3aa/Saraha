@@ -23,7 +23,7 @@ export const generalFields = {
       .custom((value, helper) => {
         return Types.ObjectId.isValid(value) || helper.message("Invalid ObjectId");
       })
-      .length(24),
+      ,
 
       
   file: {

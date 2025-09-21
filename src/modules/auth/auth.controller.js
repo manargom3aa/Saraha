@@ -6,7 +6,6 @@ const router = Router();
 
 router.post('/signup', validation(validators.signup),authService.signup); 
 router.patch('/confirm-email',validation(validators.confirmEmail), authService.confirmEmail); 
-//router.patch('/verify-password', validation(authValidation.verifyForgotPassword), authService.verifyForgotPassword)
 
 router.post('/login', validation(validators.login),authService.login); 
 router.post('/signup/gmail',validation(validators.loginWithGmail),  authService.signupWithGmail); 

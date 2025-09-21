@@ -41,3 +41,19 @@ export const sendMessage = asyncHandler(
         return successResponse({ res, status:201, data: { message } })
     }
 )
+
+export const getMessage = asyncHandler(
+    async (req, res, next) =>{
+       const { userId } = req.params;
+
+       const messages = await DBService.find({
+        model: MessageModel,
+        filter: {
+            receiverId: userId,
+        },
+       })
+
+
+        return successResponse({ res, status:200, data: { messages } })
+    }
+)

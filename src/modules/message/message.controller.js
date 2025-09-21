@@ -27,4 +27,10 @@ router.post(
 )
 
 
+router.get(
+    "/:userId/get-messages",
+    validation(validators.getMessage),
+    messageService.getMessage
+)
+
 export default router
